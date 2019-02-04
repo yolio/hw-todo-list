@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "edd71a12-6acb-41b3-9db7-b702b7982084",
+		"name": "tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "todo-authorized",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-no-auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-forbidden",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "invalidToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-add-sleep",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "todo",
+							"value": "sleep",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-add-eat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "todo",
+							"value": "eat",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-add-repeat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "todo",
+							"value": "repeat",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-check-sleep",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/check/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"check",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "sleep"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-uncheck-sleep",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/uncheck/sleep",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"uncheck",
+						"sleep"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-delete-repeat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/delete/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "repeat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-delete-bad-request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/delete/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-delete-repeat-by-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/delete/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "5c521fcdb2220e2a84997f0c5c521fcdb2220e2a84997f0c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-get-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/getId/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getId",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "eat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-check-sleep-by-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/check/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"check",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "5c51d6614c157416fcd69440"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "todo-uncheck-sleep-by-id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "validToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/uncheck/:todo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"uncheck",
+						":todo"
+					],
+					"variable": [
+						{
+							"key": "todo",
+							"value": "5c51d6614c157416fcd69440"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
